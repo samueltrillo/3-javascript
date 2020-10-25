@@ -30,7 +30,7 @@ thirdw = firstw.length + secondw.length;
   2) Strings 
 *****************************/
 
-/* a) Crear una variable de tipo string con al menos 10 caracteres y convertir todo el texto en mayúscula 
+/* a) Crear una variable de tipo string con al menos 10 caracteres y convertir todo el texto en mayúscula
 (utilizar toUpperCase).*/
 
 var text;
@@ -49,7 +49,7 @@ text2.substring (0,4);
 
 var text3,result;
 text3= "Back in time";
-result = text3.substring (9,12);
+result = text3.substring (9);
 
 /* d) Crear una variable de tipo string con al menos 10 caracteres y generar un nuevo string con la primera
 letra en mayúscula y las demás en minúscula. Guardar el resultado en una nueva variable (utilizar substring,
@@ -58,7 +58,7 @@ toUpperCase, toLowerCase y el operador +).*/
 var text4,result2;
 text4 = "rUN TO THE HILLS"
 result2 = text4.substring(0,1).toUpperCase() 
-        + text4.substring(1,16).toLocaleLowerCase(); 
+        + text4.substring(1).toLocaleLowerCase(); 
 
 /* e) Crear una variable de tipo string con al menos 10 caracteres y algún espacio en blanco. Encontrar la 
 posición del primer espacio en blanco y guardarla en una variable (utilizar indexOf).*/
@@ -67,7 +67,7 @@ var text5,result3;
 text5 = "Brave new world";
 result3 = text5.indexOf(" "); 
 
-/* f) Crear una variable de tipo string con al menos 2 palabras largas (10 caracteres y algún espacio entre 
+/* f) Crear una variable de tipo string con al menos 2 palabras largas (10 caracteres y algún espacio entre
 medio). Utilizar los métodos de los ejercicios anteriores para generar un nuevo string que tenga la primera
 letra de ambas palabras en mayúscula y las demás letras en minúscula (utilizar indexOf, substring, toUpperCase,
 toLowerCase y el operador +).*/
@@ -78,11 +78,11 @@ result4 = text6.substring(text6.indexOf("i"),text6.indexOf("i")+1).toUpperCase()
         + text6.substring(text6.indexOf("i")+1,10).toLocaleLowerCase()
         + " "
         + text6.substring(text6.indexOf("e"),text6.indexOf("e")+1).toUpperCase()
-        + text6.substring(text6.indexOf("e")+1,22).toLocaleLowerCase();
+        + text6.substring(text6.indexOf("e")+1).toLocaleLowerCase();
 
 /****************************
   3) Arrays
-*****************************/        
+*****************************/
 
 /* a) Dado el siguiente array: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre",
 "Octubre", "Noviembre", "Diciembre"] mostrar por consola los meses 5 y 11 (utilizar console.log)*/
@@ -119,7 +119,7 @@ var monthsCopy = months.slice(4,11);
 
 /****************************
   4) If Else
-*****************************/  
+*****************************/
 
 /* a) Crear un número aleatorio entre 0 y 1 utilizando la función Math.random(), si el valor es mayor o igual que 0,5 mostrar
 una alerta con el mensaje “Greater than 0,5” y sino un alerta con el mensaje “Lower than 0,5”*/
@@ -167,18 +167,30 @@ alerta utilizando cada una de las palabras.*/
 var words;
 words = ["red","blue","orange","green","yellow"];
 for (var i = 0; i <=4; i++) {
-        alert (words[i]);
+  alert (words[i]);
 }
 
 /* b) Al array anterior convertir la primera letra de cada palabra en mayúscula y mostrar una alerta por cada palabra modificada.*/
 
+for (var i = 0; i <=4; i++) {
+  alert (words[i].substring(0,1).toUpperCase()+words[i].substring(1).toLowerCase());
+}
+
 /* c) Crear una variable llamada “sentence” que tenga un string vacío, luego al array del punto a) recorrerlo con un bucle for 
 para ir guardando cada palabra dentro de la variable sentence. Al final mostrar una única alerta con la cadena completa.*/
+
+var sentence = " ";
+for (var i = 0; i <=4; i++) {
+  sentence += words [i] + " ";
+}
+alert (sentence);
 
 /* d) Crear una array vacío y con un bucle for de 10 repeticiones llenar el array con el número de la repetición, es decir que 
 al final de la ejecución del bucle for deberia haber 10 elementos dentro del array, desde el número 0 hasta al numero 9. 
 Mostrar por la consola del navegador el al array final (utilizar console.log).*/
 
-
-
-
+var array = [];
+for (var i=0; i<=9; i++) {
+  array [i]=i;
+}
+console.log (array);
