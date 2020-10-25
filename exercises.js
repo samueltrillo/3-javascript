@@ -9,6 +9,7 @@ var a,b,c;
 a = 2;
 b = 3;
 c= a + b;
+console.log(c);
 
 /* b) Crear dos variables de tipo String y concatenarlas guardando el resultado en una 3er variable.*/
 
@@ -16,6 +17,7 @@ var name,surname,final;
 name = "Samuel";
 country = "Trillo";
 final = name + country;
+console.log(final);
 
 
 /* c) Crear dos variables de tipo String y sumar el largo de cada variable (cantidad de letras del string)
@@ -25,6 +27,7 @@ var firstw,secondw,thirdw;
 firstw = "Hello";
 secondw = "World";
 thirdw = firstw.length + secondw.length;
+console.log(thirdw);
 
 /****************************
   2) Strings 
@@ -36,6 +39,7 @@ thirdw = firstw.length + secondw.length;
 var text;
 text= "One of the best";
 text.toUpperCase();
+console.log(text.toUpperCase());
 
 /* b) Crear una variable de tipo string con al menos 10 caracteres y generar un nuevo string con los primeros
 5 caracteres guardando el resultado en una nueva variable (utilizar substring).*/
@@ -43,6 +47,7 @@ text.toUpperCase();
 var text2;
 text2= "Number of the beast";
 text2.substring (0,4);
+console.log(text2.substring (0,4));
 
 /* c) Crear una variable de tipo string con al menos 10 caracteres y generar un nuevo string con los últimos
 3 caracteres guardando el resultado en una nueva variable (utilizar substring).*/
@@ -50,6 +55,7 @@ text2.substring (0,4);
 var text3,result;
 text3= "Back in time";
 result = text3.substring (9);
+console.log(result);
 
 /* d) Crear una variable de tipo string con al menos 10 caracteres y generar un nuevo string con la primera
 letra en mayúscula y las demás en minúscula. Guardar el resultado en una nueva variable (utilizar substring,
@@ -58,14 +64,16 @@ toUpperCase, toLowerCase y el operador +).*/
 var text4,result2;
 text4 = "rUN TO THE HILLS"
 result2 = text4.substring(0,1).toUpperCase() 
-        + text4.substring(1).toLocaleLowerCase(); 
+        + text4.substring(1).toLocaleLowerCase();
+console.log(result2);
 
 /* e) Crear una variable de tipo string con al menos 10 caracteres y algún espacio en blanco. Encontrar la 
 posición del primer espacio en blanco y guardarla en una variable (utilizar indexOf).*/
 
 var text5,result3;
 text5 = "Brave new world";
-result3 = text5.indexOf(" "); 
+result3 = text5.indexOf(" ");
+console.log(result3);
 
 /* f) Crear una variable de tipo string con al menos 2 palabras largas (10 caracteres y algún espacio entre
 medio). Utilizar los métodos de los ejercicios anteriores para generar un nuevo string que tenga la primera
@@ -79,6 +87,7 @@ result4 = text6.substring(text6.indexOf("i"),text6.indexOf("i")+1).toUpperCase()
         + " "
         + text6.substring(text6.indexOf("e"),text6.indexOf("e")+1).toUpperCase()
         + text6.substring(text6.indexOf("e")+1).toLocaleLowerCase();
+console.log(result4);
 
 /****************************
   3) Arrays
@@ -99,23 +108,28 @@ console.log(months.sort());
 
 months.unshift("Hello");
 months.push("Bye");
+console.log(months.unshift("Hello"), months.push("Bye"));
 
 /* d) Quitar un elemento del principio y del final del array (utilizar shift y pop).*/
 
 months.shift("Hello");
 months.pop("Bye");
+console.log(months.shift("Hello"),months.pop("Bye"));
 
 /* e) Invertir el orden del array (utilizar reverse)*/
 
 months.reverse();
+console.log(months.reverse());
 
 /* f) Unir todos los elementos del array en un único string donde cada mes este separado por un guión - (utilizar join).*/
 
 months.join("-");
+console.log(months.join("-"));
 
 /* g) Crear una copia del array de meses que contenga desde Mayo hasta Noviembre (utilizar slice).*/
 
 var monthsCopy = months.slice(4,11);
+console.log(monthsCopy);
 
 /****************************
   4) If Else
