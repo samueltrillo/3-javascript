@@ -173,7 +173,7 @@ if (Age < 2) {
 
 /****************************
   5) For
-*****************************/  
+*****************************/
 
 /* a) Crear un array que contenga 5 palabras y recorrer dicho array utilizando un bucle for de JavaScript para mostrar una
 alerta utilizando cada una de las palabras.*/
@@ -199,8 +199,8 @@ for (var i = 0; i <=4; i++) {
 }
 alert (sentence);
 
-/* d) Crear una array vacío y con un bucle for de 10 repeticiones llenar el array con el número de la repetición, es decir que 
-al final de la ejecución del bucle for deberia haber 10 elementos dentro del array, desde el número 0 hasta al numero 9. 
+/* d) Crear una array vacío y con un bucle for de 10 repeticiones llenar el array con el número de la repetición, es decir
+que al final de la ejecución del bucle for deberia haber 10 elementos dentro del array, desde el número 0 hasta al numero 9. 
 Mostrar por la consola del navegador el al array final (utilizar console.log).*/
 
 var array = [];
@@ -208,3 +208,106 @@ for (var i=0; i<=9; i++) {
   array [i]=i;
 }
 console.log (array);
+
+/****************************
+  6) Funciones
+*****************************/
+
+/* a) Crear una función suma que reciba dos valores numéricos y retorne el resultado. Ejecutar la función y guardar el resultado
+en una variable, mostrando el valor de dicha variable en la consola del navegador.*/
+
+function suma(val1,val2) {
+  var sum;
+  sum = val1 + val2 ;
+  return (sum);
+}
+var val1, val2, funcResult;
+val1 = 5;
+val2 = 4;
+funcResult = suma(val1,val2);
+console.log (funcResult);
+
+/* b) A la función suma anterior, agregarle una validación para controlar si alguno de los parámetros no es un número, mostrar
+una alerta aclarando que uno de los parámetros tiene error y retornar el valor NaN como resultado.*/
+
+function suma(val1,val2) {
+  if (typeof(val1) !== "number" || typeof(val2) !== "number") {
+      alert ("One or two parameters are not numbers");
+      return NaN;
+    } else {
+      var sum;
+      sum = val1 + val2 ;
+      return (sum);
+    }
+}
+var val1, val2, funcResult;
+val1 = 5;
+val2 = 4;
+funcResult = suma(val1,val2);
+console.log (funcResult);
+
+/* c) Crear una función validate integer que reciba un número como parámetro y devuelva verdadero si es un número entero.*/
+
+function validateInteger(val3) {
+  if (Number.isInteger(val3) === true) {
+    return ("true");
+  } else {
+    return ("The parameter is not a integer value");
+  }
+}
+var val3;
+val3 = 5;
+console.log (validateInteger(val3));
+
+/* d) A la función suma del ejercicio 6b) agregarle una llamada que valide que los números sean enteros. En caso que haya decimales
+mostrar un alerta con el error y retorna el número convertido a entero (redondeado).*/
+
+function suma(val1,val2) {
+  if (typeof(val1) !== "number" || typeof(val2) !== "number") {
+      alert ("One or two parameters are not numbers");
+      return NaN;
+    } else if (Number.isInteger(val1) != true || Number.isInteger(val2) != true) {
+      alert ("One or two parameters are not integer values");
+      var sum;
+      sum = Math.round(val1) + Math.round(val2);
+      return (sum);
+    } else {
+      var sum;
+      sum = val1 + val2 ;
+      return (sum);
+    }
+  }
+var val1, val2, funcResult;
+val1 = 5;
+val2 = 4;
+funcResult = suma(val1,val2);
+console.log (funcResult);
+
+/* e) Convertir la validación del ejercicio 6b) en una función separada y llamarla dentro de la función suma probando que todo siga
+funcionando igual*/
+
+function suma(val1,val2) {
+  if (validacion(val1,val2) === "Nan") {
+      return NaN;
+    } else if (Number.isInteger(val1) != true || Number.isInteger(val2) != true) {
+      alert ("One or two parameters are not integer values");
+      var sum;
+      sum = Math.round(val1) + Math.round(val2);
+      return (sum);
+    } else {
+      var sum;
+      sum = val1 + val2 ;
+      return (sum);
+    }
+  }
+function validacion(val1,val2) {
+  if (typeof(val1) !== "number" || typeof(val2) !== "number") {
+      alert ("One or two parameters are not numbers");
+      return NaN;
+  }
+}
+var val1, val2, funcResult;
+val1 = 5;
+val2 = 4;
+funcResult = suma(val1,val2);
+console.log (funcResult);
